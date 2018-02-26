@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom'
+import Login from './Login'
+
 
 class Baselayout extends Component {
 
@@ -8,7 +11,7 @@ class Baselayout extends Component {
       <div>
 
       <nav>
-
+        <Login/>
       </nav>
 
       {this.props.children}

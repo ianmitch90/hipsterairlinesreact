@@ -1,9 +1,42 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
-const login = ({}) => (
-  <div>
+class Login extends Component {
 
-  </div>
-);
+  state = {
+    open: false
+  };
 
-export default login;
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
+
+  render() {
+
+    const actions = [
+      <FlatButton label="Cancel" primary={true} onClick={this.handleClose}/>,
+      <FlatButton label="Submit" primary={true} disabled={true} onClick={this.handleClose}/>
+    ];
+
+    return (
+      <div>
+      <RaisedButton label="Login" onClick={this.handleOpen}/>
+      <Dialog title="Log into your Account" actions={actions} modal={true} open={this.state.open}>
+
+        <TextField hintText="Enter Username" floatingLabelText="Username"/>
+        <TextField hintText="Enter Password" floatingLabelText="Password" type="password"/>
+      </Dialog>
+    </div>
+    );
+  }
+
+}
+
+export default Login;
