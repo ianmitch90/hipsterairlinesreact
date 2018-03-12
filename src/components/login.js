@@ -18,6 +18,9 @@ class Login extends Component {
     this.setState({open: false});
   };
 
+  handleSubmit= () => {
+    /*i want the submitbutton appears when BOTH pass and username and handle THEN handle the actual submit*/
+  }
   render() {
 
     const actions = [

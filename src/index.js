@@ -23,7 +23,7 @@ const userReducer = (state={}, action) => {
     }
   }
   return state
-}
+};
 
 const loadingReducer = (state = false, action) => {
   if (action.type === 'START_LOADING'){
@@ -33,7 +33,7 @@ const loadingReducer = (state = false, action) => {
     return false;
   }
   return state
-}
+};
 
 const reducer = combineReducers({
   user: userReducer,
